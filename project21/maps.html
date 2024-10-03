@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maps Challenge</title>
+</head>
+<body>
+
+<img src="freshens.png" style="width: 600px; height: 400px;">
+
+
+<div>
+    <button onclick="location.href='index.html'">Back</button>
+    <h2>Maps Challenge</h2>
+    <p>Which building on St. John's Campus has Freshens?</p>
+    <input type="text" id="maps-answer" placeholder="Your answer">
+    <button onclick="checkMapsAnswer()">Submit</button>
+    <p id="maps-result"></p>
+</div>
+
+<script>
+function checkMapsAnswer() {
+    var answer = document.getElementById('maps-answer').value.toLowerCase();
+    if (answer === 'marillac') {
+        document.getElementById('maps-result').innerText = "Correct! You can go to Photos.";
+        setTimeout(function() {
+            location.href = 'photos.html'; // Redirect to the next challenge
+        }, 2000);
+    } else {
+        document.getElementById('maps-result').innerText = "Incorrect! Try again.";
+    }
+}
+</script>
+
+</body>
+</html>

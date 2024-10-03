@@ -3,33 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Messages App</title>
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            background-color: white;
-            font-family: sans-serif;
-        }
-        .message-box {
-            width: 300px;
-            border: 1px solid #ccc;
-            padding: 10px;
-            border-radius: 10px;
-            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-        }
-    </style>
+    <title>Messages Challenge</title>
 </head>
 <body>
 
-<div class="message-box">
-    <h2>New Message</h2>
-    <p>"Welcome to your iPhone simulator! Click below to go back to the home screen."</p>
-    <a href="index.html">Back to Home</a>
+ <img src="map1.png" style="width: 400px; height: 400px;">
+
+<div>
+    <button onclick="location.href='index.html'">Back</button>
+    <h2>Messages Challenge</h2>
+    <p>How much Gates are there on Campus?</p>
+    <input type="text" id="answer" placeholder="Your answer">
+    <button onclick="checkAnswer()">Submit</button>
+    <p id="result"></p>
 </div>
+
+<script>
+function checkAnswer() {
+    var answer = document.getElementById('answer').value;
+    if (answer == '8') {
+        document.getElementById('result').innerText = "Correct! You can go to Safari.";
+        setTimeout(function() {
+            location.href = 'safari.html'; // Redirect to the next challenge
+        }, 2000);
+    } else {
+        document.getElementById('result').innerText = "Incorrect! Try again.";
+    }
+}
+</script>
 
 </body>
 </html>
