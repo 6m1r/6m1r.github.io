@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator Challenge</title>
+</head>
+<body>
+
+<div>
+    <button onclick="location.href='index.html'">Back</button>
+    <h2>Calculator Challenge</h2>
+    <p>What is 2024 - 1870?</p>
+    <input type="text" id="calculator-answer" placeholder="Your answer">
+    <button onclick="checkCalculatorAnswer()">Submit</button>
+    <p id="calculator-result"></p>
+</div>
+
+<script>
+function checkCalculatorAnswer() {
+    var answer = document.getElementById('calculator-answer').value;
+    if (answer == '154') {
+        document.getElementById('calculator-result').innerText = "Correct! You can go to Settings.";
+        setTimeout(function() {
+            location.href = 'settings.html'; // Redirect to the next challenge
+        }, 2000);
+    } else {
+        document.getElementById('calculator-result').innerText = "Incorrect! Try again.";
+    }
+}
+</script>
+
+</body>
+</html>
