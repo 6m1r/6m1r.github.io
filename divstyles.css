@@ -1,0 +1,113 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navbar Styling */
+.navbar {
+    background-color: #333;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    height: 60px;
+    z-index: 1000;
+}
+
+.navbar img.logo {
+    height: 50px;
+    margin-right: auto;
+}
+
+.navbar a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    color: black;
+}
+
+/* Content Styling */
+.content {
+    margin-top: 80px; /* Space for fixed navbar */
+    padding: 20px;
+}
+
+h2 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Image Styling */
+.image img {
+    width: 100%; /* Responsive to container width */
+    max-width: 400px; /* Limits maximum width */
+    height: auto; /* Maintains aspect ratio */
+}
+
+/* Text Module Styling */
+.text-module {
+    max-width: 400px;
+    text-align: left;
+    margin-bottom: 20px; /* Adds space below each text module */
+}
+
+.text-module h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.text-module p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+/* Background Image Container Styling */
+.background-image-container {
+    background-image: url('privatedining.png');
+    background-size: cover;
+    background-position: center;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    margin-bottom: 60px;
+    position: relative;
+}
+
+/* Optional Second Background Image (if separate containers) */
+.background-image-container-alt {
+    background-image: url('hempstead.png');
+    background-size: cover;
+    background-position: center;
+    padding: 50px;
+    text-align: center;
+}
+
+/* Text Styling for Links in Background Image Container */
+.background-image-container h1 a,
+.background-image-container-alt h1 a {
+    color: white;
+    text-decoration: none;
+    font-size: 36px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.background-image-container h1 a:hover,
+.background-image-container-alt h1 a:hover {
+    color: lightblue;
+}
