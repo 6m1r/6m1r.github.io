@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Ezo Kitchen</title>
+    <style>
+        /* Basic styling for the body */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: black; /* Sets the background to black */
+            color: white; /* Sets all text to white */
+        }
+
+        /* Navbar styling */
+        .navbar {
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            background-image: url('texture.jpg'); /* Replace with actual texture image path */
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: fixed; /* Stays at the top */
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            height: 60px;
+        }
+
+        /* Logo styling */
+        .navbar img.logo {
+            height: 50px;
+            margin-right: auto;
+        }
+
+        /* Navbar links */
+        .navbar a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .navbar a:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+            color: black;
+        }
+
+        /* Adds margin to content to avoid overlap with fixed navbar */
+        .content {
+            margin-top: 70px;
+            padding: 20px;
+        }
+
+        /* Styling for content image */
+        .content img {
+            width: 100%; /* Makes image fill the container width */
+            height: auto; /* Maintains aspect ratio */
+            max-width: 100%; /* Prevents image from exceeding container width */
+            border-radius: 10px; /* Optional: adds rounded corners */
+        }
+
+        /* Text styling for operational hours and policy */
+        h1, h2, p {
+            color: white;
+        }
+
+        /* Specific styling for emphasis */
+        em {
+            font-style: italic;
+            color: lightgray; /* Makes emphasized text slightly lighter */
+        }
+
+        /* Additional text styling */
+        .hours, .policy {
+            margin-top: 20px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar with clickable logo -->
+    <div class="navbar">
+        <a href="index.html">
+            <img src="ezologo.png" alt="Ezo Kitchen Logo" class="logo">
+        </a>
+        <a href="about.html">About</a>
+        <a href="reservation.html">Reservation</a>
+        <a href="lunch.html">Menu</a>
+         <a href="careers.html">Careers</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <!-- Page Content -->
+    <div class="content">
+        <!-- Content image -->
+        <img src="hoosteak.png" alt="Image of Hoosteak" />
+
+        <!-- Hours of Operations -->
+        <h1>Hours of Operations</h1>
+        <div class="hours">
+            <p>Mon: 12pm - 10pm</p>
+            <p>Tue - Fri: 12pm - 11pm</p>
+            <p>Sat: 12pm - 12am</p>
+            <p>Sun: 12pm - 10pm</p>
+        </div>
+
+        <!-- Dress Code Policy -->
+        <h2><em>PROPER ATTIRE REQUIRED</em></h2>
+        <div class="policy">
+            <p>In order to maintain an enjoyable environment for all our guests, we prefer NO:</p>
+            <ul>
+                <li>Baseball caps & Hats</li>
+                <li>Tank tops & Sleeveless Shirts</li>
+                <li>Hoodies</li>
+                <li>Excessively revealing clothing</li>
+                <li>Exposed undergarments</li>
+            </ul>
+            <p>Admittance is at the discretion of management, who reserves the right to refuse service to patrons who are inappropriately dressed regardless of reservation status. Thank you in advance for your adherence.</p>
+        </div>
+    </div>
+
+    <!-- Google Maps Link with Image -->
+    <div class="content">
+        <a href="https://www.google.com/maps/place/260+Wheatley+Plaza,+Greenvale,+NY+11548/@40.8089562,-73.6282633,16.96z/data=!4m6!3m5!1s0x89c2866c546f6531:0x3c2328277de1705f!8m2!3d40.8098368!4d-73.6268218!16s%2Fg%2F11c2hxw663?entry=ttu&g_ep=EgoyMDI0MTAyOS4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+            <img src="map.png" alt="Image of Google Maps" />
+        </a>
+    </div>
+
+</body>
+</html>

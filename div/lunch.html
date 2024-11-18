@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lunch Menu - Ezo Kitchen</title>
+    <style>
+        /* Base styling for body */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: white;
+            text-align: center;
+        }
+
+        /* Navbar styling with wood texture */
+        .navbar {
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            background-image: url('texture.jpg'); /* Replace with your actual wood texture file */
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            height: 60px;
+        }
+
+        /* Logo styling */
+        .navbar img.logo {
+            height: 50px;
+            margin-right: auto;
+        }
+
+        /* Navbar links */
+        .navbar a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .navbar a:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+            color: black;
+        }
+
+        /* Button Section */
+        .menu-buttons {
+            margin-top: 80px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .menu-buttons a {
+            background-color: white;
+            color: black;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            width: 100px;
+            text-align: center;
+        }
+
+        .menu-buttons a:hover {
+            background-color: #ccc;
+        }
+
+        /* Main content styling */
+        .main-content {
+            margin: 80px auto;
+            max-width: 800px;
+            padding: 50px 20px;
+        }
+
+        /* Menu section styling */
+        .menu-section {
+            margin: 40px 0;
+        }
+
+        .menu-section h2 {
+            font-size: 28px;
+            color: #fff;
+            border-bottom: 2px solid #444;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+        }
+
+        .menu-section h3 {
+            font-size: 22px;
+            color: #ddd;
+            margin: 20px 0 10px;
+        }
+
+        /* Menu item styling */
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            font-size: 18px;
+            padding: 5px 0;
+            color: #ccc;
+        }
+
+        .menu-item p {
+            margin: 0;
+            padding-right: 20px;
+        }
+
+        /* Horizontal line between sections */
+        .separator {
+            border-top: 1px solid #555;
+            margin: 30px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar with clickable logo and links -->
+    <div class="navbar">
+        <a href="index.html">
+            <img src="ezologo.png" alt="Ezo Kitchen Logo" class="logo">
+        </a>
+        <a href="about.html">About</a>
+        <a href="reservation.html">Reservation</a>
+        <a href="lunch.html">Menu</a>
+         <a href="careers.html">Careers</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <!-- Buttons for Lunch, Dinner, Dessert, Drinks -->
+    <div class="menu-buttons">
+        <a href="lunch.html">Lunch</a>
+        <a href="dinner.html">Dinner</a>
+        <a href="dessert.html">Dessert</a>
+        <a href="drinks.html">Drinks</a>
+    </div>
+
+    <!-- Main Content Section -->
+    <div class="main-content">
+        <h1>Lunch Menu</h1>
+        
+        <!-- Appetizers Section -->
+        <div class="menu-section">
+            <h2>Appetizers</h2>
+            <div class="menu-item">
+                <p>Miso Soup</p>
+                <p>Traditional miso broth with tofu, seaweed, and scallions</p>
+            </div>
+            <div class="menu-item">
+                <p>Edamame</p>
+                <p>Steamed soybeans with sea salt</p>
+            </div>
+            <div class="menu-item">
+                <p>Vietnamese Summer Rolls</p>
+                <p>Shrimp, vermicelli, lettuce, and herbs wrapped in rice paper, served with peanut hoisin dipping sauce</p>
+            </div>
+            <div class="menu-item">
+                <p>Spicy Tuna Tartare</p>
+                <p>Diced spicy tuna, avocado, cucumber, and crispy wontons</p>
+            </div>
+            <div class="menu-item">
+                <p>Thai Chicken Satay</p>
+                <p>Grilled marinated chicken skewers served with peanut dipping sauce</p>
+            </div>
+        </div>
+
+        <div class="separator"></div>
+
+        <!-- Lunch Bowls Section -->
+        <div class="menu-section">
+            <h2>Lunch Bowls</h2>
+            <div class="menu-item">
+                <p>Sushi Lunch Set</p>
+                <p>5 pieces of nigiri (chef’s choice) and a California roll, served with miso soup</p>
+            </div>
+            <div class="menu-item">
+                <p>Teriyaki Salmon Bowl</p>
+                <p>Grilled salmon fillet with teriyaki glaze, served with steamed rice and sautéed vegetables</p>
+            </div>
+            <div class="menu-item">
+                <p>Poke Bowl</p>
+                <p>Marinated tuna or salmon, seaweed, avocado, and edamame over sushi rice, topped with sesame and soy sauce</p>
+            </div>
+            <div class="menu-item">
+                <p>Pad Thai Lunch Bowl</p>
+                <p>Stir-fried rice noodles with tofu, egg, peanuts, bean sprouts, and tamarind sauce (choice of shrimp, chicken, or tofu)</p>
+            </div>
+            <div class="menu-item">
+                <p>Vietnamese Vermicelli Bowl</p>
+                <p>Grilled lemongrass chicken or beef, vermicelli noodles, fresh herbs, lettuce, and crushed peanuts with nuoc cham dressing</p>
+            </div>
+        </div>
+
+        <div class="separator"></div>
+
+        <!-- Sushi Rolls Section -->
+        <div class="menu-section">
+            <h2>Sushi Rolls</h2>
+            <div class="menu-item">
+                <p>Spicy Tuna Roll</p>
+                <p>Tuna, spicy mayo, and cucumber</p>
+            </div>
+            <div class="menu-item">
+                <p>California Roll</p>
+                <p>Crab stick, avocado, and cucumber</p>
+            </div>
+            <div class="menu-item">
+                <p>Dragon Roll</p>
+                <p>Eel, avocado, cucumber, and eel sauce</p>
+            </div>
+            <div class="menu-item">
+                <p>Rainbow Roll</p>
+                <p>California roll topped with assorted sashimi</p>
+            </div>
+            <div class="menu-item">
+                <p>Tempura Shrimp Roll</p>
+                <p>Crispy tempura shrimp, avocado, and spicy mayo</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
