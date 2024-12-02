@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GIF Background with Button</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: black; /* Fallback background color */
+      overflow: hidden;
+    }
+
+    .gif-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: -1; /* Places the GIF in the background */
+    }
+
+    .content {
+      position: relative;
+      color: white;
+      text-align: center;
+      padding-top: 20%;
+      font-family: Arial, sans-serif;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+      transition: opacity 1s ease-in-out; /* Transition for fade-out effect */
+    }
+
+    /* Style for the button */
+    .enter-button {
+      background-color: #000000; /* Black background */
+      color: white;
+      border: none;
+      padding: 15px 25px;
+      font-size: 20px;
+      cursor: pointer;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .enter-button:hover {
+      background-color: #FF0000; /* Darker blue on hover */
+    }
+
+    /* Hidden class for content when transitioning */
+    .fade-out {
+      opacity: 0; /* Hide content with fade-out */
+    }
+  </style>
+</head>
+<body>
+  <div class="gif-background">
+    <div class="tenor-gif-embed" data-postid="16766520" data-share-method="host" data-aspect-ratio="1" data-width="100%">
+      <a href="https://tenor.com/view/eric-bischoff-wwe-champion-wwe-raw-wrestling-gif-16766520">Eric Bischoff Wwe Champion GIF</a>
+      from <a href="https://tenor.com/search/eric+bischoff-gifs">Eric Bischoff GIFs</a>
+    </div>
+    <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+  </div>
+  <div class="content" id="mainContent">
+    <h1>WWE MAGAZINE COLLECTION</h1>
+    <!-- Button to enter the collection -->
+    <a href="collection.html" class="enter-button" id="enterButton">Enter the Collection</a>
+  </div>
+
+  <script>
+    // Get the button and content
+    const enterButton = document.getElementById('enterButton');
+    const mainContent = document.getElementById('mainContent');
+
+    // When the button is clicked, trigger the transition
+    enterButton.addEventListener('click', function(event) {
+      event.preventDefault(); // Prevent the immediate redirect
+
+      // Add fade-out class to initiate the fade-out effect
+      mainContent.classList.add('fade-out');
+
+      // Wait for the transition to complete (1 second) before redirecting
+      setTimeout(() => {
+        window.location.href = "collection.html"; // Redirect to collection page
+      }, 1000); // Timeout duration should match the fade-out transition time
+    });
+  </script>
+</body>
+</html>
