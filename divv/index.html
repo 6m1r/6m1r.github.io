@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GIF Background with Seamless Font Cycling</title>
+  <style>
+    /* Define custom fonts */
+    @font-face {
+      font-family: 'WRESTLEMANIA';
+      src: url('./WRESTLEMANIA.ttf') format('truetype');
+    }
+
+    @font-face {
+      font-family: 'Rawhide2016';
+      src: url('./rawhide-raw-2016-font/RawhideRaw2016-qM6l.ttf') format('truetype');
+    }
+
+    @font-face {
+      font-family: 'YES!';
+      src: url('./yes-font/Yes-20VX.ttf') format('truetype');
+    }
+
+    /* General Styles */
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+      font-family: 'WRESTLEMANIA', sans-serif;
+      overflow: hidden;
+      transition: opacity 1s ease;
+    }
+
+    .gif-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    }
+
+    h1 {
+      font-size: 3rem;
+      text-transform: uppercase;
+      transition: font-family 0.5s ease-in-out;
+      margin: 0 0 20px;
+    }
+
+    .enter-button {
+      background-color: #000;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 20px;
+      cursor: pointer;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .enter-button:hover {
+      background-color: #FFD700;
+    }
+
+    /* Position the custom audio play button at the bottom-right */
+    .audio-player-container {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      z-index: 2;
+    }
+
+    /* Custom play button style */
+    .play-button {
+      width: 70px;
+      height: 70px;
+      background-color: #222;
+      border-radius: 50%;
+      border: none;
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+      transition: background-color 0.3s ease;
+    }
+
+    .play-button:hover {
+      background-color: #FFD700;
+    }
+  </style>
+</head>
+<body>
+  <!-- GIF Background -->
+  <div class="gif-background">
+    <div class="tenor-gif-embed" data-postid="16766520" data-share-method="host" data-aspect-ratio="1" data-width="100%">
+      <a href="https://tenor.com/view/eric-bischoff-wwe-champion-wwe-raw-wrestling-gif-16766520">Eric Bischoff WWE Champion GIF</a>
+      from <a href="https://tenor.com/search/eric+bischoff-gifs">Eric Bischoff GIFs</a>
+    </div>
+    <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+  </div>
+
+  <!-- Content -->
+  <div class="content">
+    <h1 id="cyclingText">THE WRESTLING VAULT</h1>
+    <a href="collection.html" class="enter-button" id="enterBtn">Enter the Collection</a>
+  </div>
+
+  <!-- Audio Player -->
+  <div class="audio-player-container">
+    <button class="play-button" id="playPauseBtn">&#10074;&#10074;</button> <!-- Pause button initially -->
+    <audio id="audioPlayer" autoplay>
+      <source src="randy_orton_theme.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+
+  <script>
+    // Font cycle implementation
+    const fonts = ['WRESTLEMANIA', 'Rawhide2016', 'YES!'];
+    const textElement = document.getElementById('cyclingText');
+    const enterButton = document.getElementById('enterBtn');
+    const playPauseBtn = document.getElementById('playPauseBtn');
+    const audioPlayer = document.getElementById('audioPlayer');
+    let fontIndex = 0;
+
+    function cycleFonts() {
+      textElement.style.fontFamily = fonts[fontIndex];
+      fontIndex = (fontIndex + 1) % fonts.length;
+    }
+
+    // Cycle fonts every 500ms
+    setInterval(cycleFonts, 500);
+    cycleFonts(); // Trigger immediately
+
+    // Fade out the page when clicking the button
+    enterButton.addEventListener('click', function(event) {
+      event.preventDefault(); // Prevent immediate redirect
+      document.body.style.opacity = 0; // Fade out
+      setTimeout(function() {
+        window.location.href = 'collection.html'; // Redirect after the fade-out
+      }, 1000); // Wait for the fade-out duration
+    });
+
+    // Check for saved playback state and time in localStorage
+    window.addEventListener('load', function() {
+      const savedTime = localStorage.getItem('audioTime');
+      const savedPlaying = localStorage.getItem('audioPlaying') === 'true';
+
+      if (savedTime) {
+        audioPlayer.currentTime = savedTime;
+      }
+
+      if (savedPlaying) {
+        audioPlayer.play();
+        playPauseBtn.innerHTML = '&#10074;&#10074;'; // Change to pause icon
+      } else {
+        playPauseBtn.innerHTML = '&#9658;'; // Play icon
+      }
+    });
+
+    // Toggle play/pause when the button is clicked
+    playPauseBtn.addEventListener('click', function() {
+      if (audioPlayer.paused) {
+        audioPlayer.play();
+        playPauseBtn.innerHTML = '&#10074;&#10074;'; // Pause icon
+        localStorage.setItem('audioPlaying', 'true');
+      } else {
+        audioPlayer.pause();
+        playPauseBtn.innerHTML = '&#9658;'; // Play icon
+        localStorage.setItem('audioPlaying', 'false');
+      }
+    });
+
+    // Save the current time of the audio to localStorage every second
+    audioPlayer.addEventListener('timeupdate', function() {
+      localStorage.setItem('audioTime', audioPlayer.currentTime);
+    });
+  </script>
+</body>
+</html>
